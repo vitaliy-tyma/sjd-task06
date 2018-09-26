@@ -1,6 +1,9 @@
 package info.sjd;
 
+import java.util.Locale;
+
 public class AppRunner {
+	Locale locale = new Locale("ru"); 
 /**
  * РАБОТА СО СТРОКАМИ
 Имея два числа вывести их умножение в столбик. Только в этом задании не используем Logger.
