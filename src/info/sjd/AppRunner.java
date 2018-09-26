@@ -3,11 +3,12 @@ package info.sjd;
 import java.util.Locale;
 
 public class AppRunner {
-	Locale locale = new Locale("ru"); 
+
 /**
- * РАБОТА СО СТРОКАМИ
-Имея два числа вывести их умножение в столбик. Только в этом задании не используем Logger.
-Выводим через System.out.print(<ваша реализация>)
+ * WORKING WITH STRINGS
+Print the product of 2 numbers multiplication. 
+Using no Logger.
+Print with System.out.print(<your job>)
 
   1234
    123
@@ -25,7 +26,7 @@ ______
 	final static String SPACEBAR_SIGN = " ";
 	
 	
-	/** Method for calculating of the output sequence.*/
+	/** Method for calculation of the output sequence.*/
 	public static void Task06Print(int NUM1, int NUM2) {
 		final int NUM_RES = NUM1*NUM2;
 		
