@@ -40,27 +40,35 @@ ______
 		
 		
 		final int COLS_COUNT = NUM_RES_LEN;
-		
+		int shift = 0;	
 
 		/*Printing rows one by one.*/
-		PrintRow(NUM1_STRING, COLS_COUNT, 0); //Print row 1 = NUM1
-		PrintRow(NUM2_STRING, COLS_COUNT, 0); //Print row 2 = NUM2
+		//Print row 1 = NUM1
+		PrintRow(NUM1_STRING, COLS_COUNT, shift); 
 		
-											  //Print row 3 = ____
-		PrintRow(GetUnderScore(NUM1_STRING).toString(), COLS_COUNT, 0);
+		//Print row 2 = NUM2
+		PrintRow(NUM2_STRING, COLS_COUNT, shift); 
 		
+	
 		
-		int k = 0;
-		for ( ; k < NUM2_LEN; k++) {		  //Print rows 4, etc...
-			PrintRow(Integer.toString(
-					NUM1*Character.digit(NUM2_STRING.charAt(NUM2_LEN-k-1),10)),
-					COLS_COUNT, k);
+		//Check for boundary condition: if the divisor has 1 digit
+		if (NUM2_LEN > 1) {
+			//Print row 3 = ____
+			PrintRow(GetUnderScore(NUM1_STRING).toString(), COLS_COUNT, 0);
+			
+			//Print rows 4, etc... Starting with shift=0.
+			for ( ; shift < NUM2_LEN; shift++) {		  
+				PrintRow(Integer.toString(
+						NUM1*Character.digit(NUM2_STRING.charAt(NUM2_LEN-shift-1),10)),
+						COLS_COUNT, shift);
+			}
 		}
 		
-											  //Print row PreLAST = ______
-		PrintRow(GetUnderScore(NUM_RES_STRING).toString(), COLS_COUNT, k);
-		
-		PrintRow(NUM_RES_STRING, COLS_COUNT, k); //Print row LAST = NUM_RES	
+		//Print row PreLAST = ______
+		PrintRow(GetUnderScore(NUM_RES_STRING).toString(), COLS_COUNT, shift);
+
+		//Print row LAST = NUM_RES
+		PrintRow(NUM_RES_STRING, COLS_COUNT, shift); 	
 
 		
 	}
