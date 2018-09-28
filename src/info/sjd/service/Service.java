@@ -33,16 +33,18 @@ public class Service {
 		
 	
 		
-		/** Check for boundary condition: if the divisor has 1 digit*/
+		/** Check for boundary condition: if the divisor has 1 digit.*/
 		if (num2_len > 1) {
 			/** Print row 3 = ____*/
 			result.append(PrintRow(GetUnderScore(num1_string).toString(), cols_count, 0));
 			
 			/** Print rows 4, etc... Starting with shift=0.*/
 			for ( ; shift < num2_len; shift++) {		  
-				result.append(PrintRow(Integer.toString(
-						num1*Character.digit(num2_string.charAt(num2_len-shift-1),10)),
-						cols_count, shift));
+				result.append(PrintRow(
+						Integer.toString(num1*
+						Character.digit(num2_string.charAt(num2_len-shift-1),10)),
+						cols_count,
+						shift));
 			}
 		}
 		
@@ -58,7 +60,7 @@ public class Service {
 	
 	
 	
-	/** From input string get StringBuilder of UNDERSORES with the same length.*/
+	/** From input string get String of UNDERSORES with the same length.*/
 	public static String GetUnderScore(String num_string) {
 		StringBuilder str = new StringBuilder("");
 	
@@ -71,7 +73,7 @@ public class Service {
 	
 	
 	
-	/** Print to console some number of SPACEBARS and finish with NUM_STRING.*/
+	/** Append some number of SPACEBARS and finish with NUM_STRING.*/
 	public static String PrintRow(String num_string, int cols_count, int shift_left) {
 		StringBuilder result = new StringBuilder();
 		
